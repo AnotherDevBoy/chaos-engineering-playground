@@ -1,0 +1,23 @@
+{
+  "name": "toxiproxy-playground",
+  "version": "1.0.0",
+  "description": "Small app to test Toxiproxy`",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/albertowar/toxiproxy-playground.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/albertowar/toxiproxy-playground/issues"
+  },
+  "homepage": "https://github.com/albertowar/toxiproxy-playground#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-async-handler": "^1.1.4"
+  }
+}

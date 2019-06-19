@@ -13,3 +13,8 @@ services:
     image: shopify/toxiproxy
     expose:
       - "22220"
+  app:
+    image: albertowar/node-web-app
+    container_name: node-web-app
+    ports:
+      - "3000:3000"
