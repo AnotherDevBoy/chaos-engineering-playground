@@ -1,5 +1,9 @@
 version: '3'
 services:
+  toxiproxy:
+    image: shopify/toxiproxy
+    expose:
+      - "22220"
   database:
     image: mysql
     container_name: test-mysql
@@ -9,12 +13,20 @@ services:
       - "3306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: 1234
-  toxiproxy:
-    image: shopify/toxiproxy
-    expose:
-      - "22220"
   app:
     image: albertowar/node-web-app
     container_name: node-web-app
     ports:
       - "3000:3000"
+    depends_on:
+      - database
+      - toxiproxy
+  test:
+    image: albertowar/locust-test
+    container_name: locust-test
+    ports:
+      - "8089:8089"
+    depends_on:
+      - database
+      - toxiproxy
+      - app
