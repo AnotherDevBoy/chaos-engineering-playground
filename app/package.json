@@ -18,6 +18,7 @@
   "homepage": "https://github.com/albertowar/toxiproxy-playground#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "express-async-handler": "^1.1.4"
+    "express-async-handler": "^1.1.4",
+    "mysql2": "^1.6.5"
   }
 }
