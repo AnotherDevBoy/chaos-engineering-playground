@@ -9,4 +9,4 @@ COPY . .
 
 EXPOSE 8089
 
-CMD [ "locust", "--host", "http://app:3000" ]
+CMD [ "locust" ]

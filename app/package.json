@@ -17,8 +17,10 @@
   },
   "homepage": "https://github.com/albertowar/toxiproxy-playground#readme",
   "dependencies": {
+    "bunyan": "^1.8.12",
     "express": "^4.17.1",
     "express-async-handler": "^1.1.4",
+    "influx": "^5.2.0",
     "mysql2": "^1.6.5"
   }
 }
