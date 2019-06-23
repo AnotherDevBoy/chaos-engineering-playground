@@ -23,6 +23,10 @@ To run the experiments against something that can be somewhat representative of 
 
 Even with this small example, we can easily reproduce issues that will impact any application with a similar architecture and find ways to mitigate them.
 
+The architecture can be summarized with the following diagram:
+
+![Architecture](Architecture.png)
+
 ## The tools
 There are a few open-source tools that I will use to run the experiments and visualize the results:
 - [Toxiproxy](https://github.com/shopify/toxiproxy): to generate chaos between the API and the database.
