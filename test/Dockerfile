@@ -1,12 +1,7 @@
-FROM python:3
+FROM loadimpact/k6:latest
 
-WORKDIR /app
+WORKDIR /test
 
-COPY requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
+COPY scripts.js scripts.js
 
-COPY . .
-
-EXPOSE 8089
-
-CMD [ "locust" ]
+CMD [ "k6", "run", "scripts.js" ]

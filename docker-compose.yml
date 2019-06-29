@@ -30,14 +30,12 @@ services:
       GF_AUTH_ANONYMOUS_ENABLED: "true"
       GF_AUTH_ANONYMOUS_ORG_ROLE: "Admin"
   database:
-    image: mysql
+    image: albertowar/mysql
     container_name: test-mysql
     ports:
       - "3306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: 1234
-    volumes:
-      - ./database/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
   app:
     image: albertowar/node-web-app
     container_name: node-web-app
@@ -53,10 +51,8 @@ services:
       - toxiproxy
       - influxdb
   test:
-    image: albertowar/locust-test
-    container_name: locust-test
-    ports:
-      - "8089:8089"
+    image: albertowar/k6-test
+    container_name: k6-test
     environment:
       APP_URL: http://node-web-app:3000
     depends_on:
